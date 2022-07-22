@@ -2,7 +2,7 @@
  * @Description:
  * @Date: 2022-07-21 12:08:54
  * @LastEditors: siwenfeng
- * @LastEditTime: 2022-07-22 00:09:05
+ * @LastEditTime: 2022-07-22 09:46:33
  */
 import {
   defineComponent,
@@ -13,6 +13,7 @@ import {
   getCurrentInstance,
   ComponentInternalInstance,
 } from "vue";
+import classes from "@/style/virtualList.module.scss";
 const PropsType = {
   listData: {
     type: Array,
@@ -74,7 +75,7 @@ export default defineComponent({
         .map((v: any) => {
           return (
             <div
-              class="infinite-list-item"
+              class={`${classes["infinite-list-item"]}`}
               key={v.id}
               style={{
                 height: props.itemSize + "px",
@@ -97,14 +98,17 @@ export default defineComponent({
       return (
         <div
           ref={refWrap}
-          class="infinite-list-container"
+          class={`${classes["infinite-list-container"]}`}
           onScroll={scrollEvent}
         >
           <div
-            class="infinite-list-phantom"
+            class={`${classes["infinite-list-phantom"]}`}
             style={{ height: listHeight.value + "px" }}
           ></div>
-          <div class="infinite-list" style={{ transform: getTransform.value }}>
+          <div
+            class={`${classes["infinite-list"]}`}
+            style={{ transform: getTransform.value }}
+          >
             {visibleData()}
           </div>
         </div>

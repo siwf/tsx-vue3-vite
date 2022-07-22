@@ -1,11 +1,11 @@
 /*
  * @Description:
  * @Date: 2022-07-16 15:52:51
- * @LastEditTime: 2022-07-22 00:09:53
+ * @LastEditTime: 2022-07-22 09:30:04
  * @Author: siwenfeng
  */
 import { defineComponent } from "vue";
-import virturalList from "./components/virtualList";
+import virturalList from "@/components/virtualList";
 import "./App.scss";
 
 export default defineComponent({
