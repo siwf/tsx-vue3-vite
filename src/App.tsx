@@ -1,12 +1,13 @@
 /*
  * @Description:
  * @Date: 2022-07-16 15:52:51
- * @LastEditTime: 2022-07-22 09:30:04
+ * @LastEditTime: 2022-07-22 10:27:41
  * @Author: siwenfeng
  */
 import { defineComponent } from "vue";
 import virturalList from "@/components/virtualList";
 import "./App.scss";
+import logoImg from '@/assets/test.jpeg';
 
 export default defineComponent({
   name: "App",
@@ -16,6 +17,7 @@ export default defineComponent({
       id: number;
       value: number;
     }
+    console.log(logoImg);
     const d: ListItem[] = [];
     for (let i = 0; i < 1000; i++) {
       d.push({ id: i, value: i });
@@ -24,6 +26,7 @@ export default defineComponent({
     const render = () => {
       return (
         <>
+          <img src={logoImg} />
           <virturalList listData={d}></virturalList>
         </>
       );
